@@ -18,7 +18,7 @@ defmodule Readability.ArticleBuilder do
   Clean out any inline styles, iframes, forms, strip extraneous <p> tags, etc.
   """
   @spec build(html_tree, options) :: html_tree
-  def build(html_tree, opts) do
+  def build(html_tree, opts \\ []) do
     origin_tree = html_tree
     html_tree = html_tree
                 |> Helper.remove_tag(fn({tag, _, _}) ->
